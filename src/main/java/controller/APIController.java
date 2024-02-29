@@ -19,11 +19,11 @@ public class APIController {
         ResponseEntity<User[]> responseEntity = restTemplate.getForEntity(url, User[].class);
         User[] objectsArray = responseEntity.getBody();
         List<User> users = Arrays.asList(objectsArray);
-        users.stream().forEach(System.out::println);
+        users.forEach(System.out::println);
 
         // Получаем  cookies
         List<String> cookies = responseEntity.getHeaders().get("Set-Cookie");
-        cookies.stream().forEach(System.out::println);
+        cookies.forEach(System.out::println);
 
         // Сохраняем  cookies в заголовке
         HttpHeaders headers = new HttpHeaders();
