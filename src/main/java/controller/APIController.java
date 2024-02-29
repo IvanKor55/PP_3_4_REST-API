@@ -27,7 +27,8 @@ public class APIController {
 
         // Сохраняем  cookies в заголовке
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Cookie",cookies.stream().collect(Collectors.joining(";")));
+        headers.set("Cookie",String.join(";",cookies));
+//        headers.set("Cookie",cookies.stream().collect(Collectors.joining(";")));
 //        headers.setContentType(MediaType.APPLICATION_JSON);
         System.out.println(headers);
         return headers;
